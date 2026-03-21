@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+import { siteConfig } from "@/shared/config/site";
+import { Footer } from "@/shared/ui/footer";
+import { Header } from "@/shared/ui/header";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -10,8 +13,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "hyunzsu",
-  description: "hyunzsu의 블로그",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -21,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${jetbrainsMono.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
