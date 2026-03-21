@@ -15,53 +15,51 @@ export default async function OGImage({ params }: OGImageProps) {
   const title = post?.meta.title ?? "hyunzsu";
 
   return new ImageResponse(
-    (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "80px",
+        backgroundColor: "#ffffff",
+        fontFamily: "sans-serif",
+      }}
+    >
       <div
         style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "80px",
-          backgroundColor: "#ffffff",
-          fontFamily: "sans-serif",
+          fontSize: 16,
+          color: "#a3a3a3",
+          textTransform: "uppercase",
+          letterSpacing: "2px",
+          marginBottom: "16px",
         }}
       >
-        <div
-          style={{
-            fontSize: 16,
-            color: "#a3a3a3",
-            textTransform: "uppercase",
-            letterSpacing: "2px",
-            marginBottom: "16px",
-          }}
-        >
-          {category}
-        </div>
-        <div
-          style={{
-            fontSize: 48,
-            fontWeight: 700,
-            color: "#171717",
-            lineHeight: 1.3,
-          }}
-        >
-          {title}
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: "60px",
-            left: "80px",
-            fontSize: 20,
-            color: "#a3a3a3",
-          }}
-        >
-          hyunzsu
-        </div>
+        {category}
       </div>
-    ),
+      <div
+        style={{
+          fontSize: 48,
+          fontWeight: 700,
+          color: "#171717",
+          lineHeight: 1.3,
+        }}
+      >
+        {title}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "60px",
+          left: "80px",
+          fontSize: 20,
+          color: "#a3a3a3",
+        }}
+      >
+        hyunzsu
+      </div>
+    </div>,
     { ...size },
   );
 }

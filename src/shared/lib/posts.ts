@@ -55,10 +55,7 @@ export function getAllPosts(): PostMeta[] {
   );
 }
 
-export function getPostBySlug(
-  category: Category,
-  slug: string,
-): Post | null {
+export function getPostBySlug(category: Category, slug: string): Post | null {
   const filePath = path.join(POSTS_DIR, category, `${slug}.mdx`);
 
   if (!fs.existsSync(filePath)) return null;

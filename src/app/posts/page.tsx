@@ -59,10 +59,7 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
       {filteredPosts.length > 0 ? (
         <ul className="divide-y divide-neutral-100">
           {filteredPosts.map((post) => (
-            <PostListItem
-              key={`${post.category}/${post.slug}`}
-              post={post}
-            />
+            <PostListItem key={`${post.category}/${post.slug}`} post={post} />
           ))}
         </ul>
       ) : (

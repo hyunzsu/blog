@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  getAllPosts,
-  getPostBySlug,
-  type Category,
-} from "@/shared/lib/posts";
+import { getAllPosts, getPostBySlug, type Category } from "@/shared/lib/posts";
 import { extractToc } from "@/shared/lib/toc";
 import { GiscusComments } from "@/shared/ui/giscus-comments";
 import { MdxContent } from "@/shared/ui/mdx-content";

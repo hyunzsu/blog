@@ -27,10 +27,7 @@ export default function Home() {
         {posts.length > 0 ? (
           <ul className="divide-y divide-neutral-100">
             {posts.map((post) => (
-              <PostListItem
-                key={`${post.category}/${post.slug}`}
-                post={post}
-              />
+              <PostListItem key={`${post.category}/${post.slug}`} post={post} />
             ))}
           </ul>
         ) : (
