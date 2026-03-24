@@ -44,7 +44,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const tocItems = extractToc(post.content);
 
   return (
-    <div className="mx-auto max-w-content px-6 py-16 lg:max-w-content-wide">
+    <div className="max-w-content lg:max-w-content-wide mx-auto px-6 py-16">
       <div className="lg:grid lg:grid-cols-[1fr_200px] lg:gap-12">
         <article>
           <header className="mb-12">

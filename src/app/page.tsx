@@ -7,7 +7,7 @@ export default function Home() {
   const posts = getAllPosts().slice(0, RECENT_POSTS_COUNT);
 
   return (
-    <div className="mx-auto max-w-content px-6 py-16">
+    <div className="max-w-content mx-auto px-6 py-16">
       <section className="mb-16">
         <h1 className="text-2xl font-semibold tracking-tight">hyunzsu</h1>
         <p className="mt-2 text-neutral-500">...</p>

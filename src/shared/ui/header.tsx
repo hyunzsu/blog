@@ -12,7 +12,7 @@ import { siteConfig } from "@/shared/config";
 export function Header() {
   return (
     <header className="border-b border-neutral-200">
-      <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
+      <nav className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-lg font-semibold tracking-tight">
           {siteConfig.name}
         </Link>

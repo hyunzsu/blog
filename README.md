@@ -21,13 +21,13 @@ pnpm dev
 
 ## 스크립트
 
-| 명령어 | 설명 |
-|--------|------|
-| `pnpm dev` | 개발 서버 (Turbopack) |
-| `pnpm build` | 프로덕션 빌드 |
-| `pnpm lint` | ESLint 검사 |
-| `pnpm format` | Prettier 포맷팅 |
-| `pnpm typecheck` | TypeScript 타입 체크 |
+| 명령어           | 설명                  |
+| ---------------- | --------------------- |
+| `pnpm dev`       | 개발 서버 (Turbopack) |
+| `pnpm build`     | 프로덕션 빌드         |
+| `pnpm lint`      | ESLint 검사           |
+| `pnpm format`    | Prettier 포맷팅       |
+| `pnpm typecheck` | TypeScript 타입 체크  |
 
 ## 프로젝트 구조
 

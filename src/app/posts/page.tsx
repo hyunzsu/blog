@@ -27,7 +27,7 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
       : allPosts;
 
   return (
-    <div className="mx-auto max-w-content px-6 py-16">
+    <div className="max-w-content mx-auto px-6 py-16">
       <h1 className="mb-8 text-2xl font-semibold tracking-tight">Posts</h1>
 
       <div className="mb-8 flex gap-2">
