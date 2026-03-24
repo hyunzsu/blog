@@ -10,7 +10,9 @@ export default function Home() {
     <div className="max-w-content mx-auto px-6 py-16">
       <section className="mb-16">
         <h1 className="text-2xl font-semibold tracking-tight">hyunzsu</h1>
-        <p className="mt-2 text-neutral-500">...</p>
+        <p className="mt-2 text-neutral-500">
+          프론트엔드 개발자. 좋은 코드와 좋은 경험에 관심이 많습니다.
+        </p>
       </section>
 
       <section>
