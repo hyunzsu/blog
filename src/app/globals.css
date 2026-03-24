@@ -14,7 +14,9 @@
     system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
     "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", sans-serif;
-  --font-mono: var(--font-mono);
+  --font-mono: var(--font-mono); /* injected by next/font via layout.tsx */
+  --width-content: 720px;
+  --width-content-wide: 1080px;
 }
 
 body {
