@@ -1,0 +1,39 @@
+---
+title: "FSD 아키텍처를 블로그에 적용하기"
+date: "2026-03-23"
+description: "Feature-Sliced Design을 Next.js 블로그 프로젝트에 적용한 경험을 공유합니다."
+tags: ["architecture", "fsd", "nextjs"]
+---
+
+## FSD란?
+
+Feature-Sliced Design(FSD)은 프론트엔드 프로젝트를 레이어와 슬라이스로 구조화하는 아키텍처 방법론입니다.
+
+### 4단계 레이어 구조
+
+이 블로그에서는 다음 4단계를 사용합니다:
+
+```
+app/ → features/ → entities/ → shared/
+```
+
+- **app** — 라우트, 레이아웃
+- **features** — 사용자 인터랙션 단위 (TOC, 댓글)
+- **entities** — 도메인 모델 (Post, Category)
+- **shared** — 범용 유틸리티, UI 프리미티브
+
+### 왜 FSD인가?
+
+일반적인 `components/`, `utils/`, `hooks/` 구조는 프로젝트가 커지면 어디에 무엇을 넣어야 할지 모호해집니다. FSD는 **레이어 간 의존성 방향을 강제**해서 이 문제를 해결합니다.
+
+```typescript
+// 허용: app → entities (상위 → 하위)
+import { getAllPosts } from "@/entities/post";
+
+// 금지: entities → features (하위 → 상위)
+// ESLint boundaries 룰이 이를 자동으로 잡아줍니다
+```
+
+### 실제 적용 결과
+
+블로그 규모에서도 FSD를 적용하니 파일 배치에 대한 고민이 줄었습니다. "이 코드는 entities인가 features인가?"라는 질문에 명확한 기준이 생겼습니다.
