@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getPostBySlug, type Category } from "@/shared/lib/posts";
+import { getPostBySlug, isCategoryValid } from "@/entities/post";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -10,7 +10,7 @@ interface OGImageProps {
 
 export default async function OGImage({ params }: OGImageProps) {
   const { category, slug } = await params;
-  const post = getPostBySlug(category as Category, slug);
+  const post = isCategoryValid(category) ? getPostBySlug(category, slug) : null;
 
   const title = post?.meta.title ?? "hyunzsu";
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
-import { siteConfig } from "@/shared/config/site";
-import { Footer } from "@/shared/ui/footer";
-import { Header } from "@/shared/ui/header";
+import { siteConfig } from "@/shared/config";
+import { Footer } from "@/shared/ui";
+import { Header } from "@/shared/ui";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({

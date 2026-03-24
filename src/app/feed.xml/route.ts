@@ -1,5 +1,5 @@
-import { getAllPosts } from "@/shared/lib/posts";
-import { siteConfig } from "@/shared/config/site";
+import { getAllPosts } from "@/entities/post";
+import { siteConfig } from "@/shared/config";
 
 export function GET() {
   const posts = getAllPosts();

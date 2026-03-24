@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/shared/lib/posts";
-import { siteConfig } from "@/shared/config/site";
+import { getAllPosts } from "@/entities/post";
+import { siteConfig } from "@/shared/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();

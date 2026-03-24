@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { getAllPosts } from "@/shared/lib/posts";
-import { PostListItem } from "@/shared/ui/post-list-item";
+import { getAllPosts, PostListItem } from "@/entities/post";
 
 const RECENT_POSTS_COUNT = 7;
 
@@ -8,7 +7,7 @@ export default function Home() {
   const posts = getAllPosts().slice(0, RECENT_POSTS_COUNT);
 
   return (
-    <div className="mx-auto max-w-[720px] px-6 py-16">
+    <div className="mx-auto max-w-content px-6 py-16">
       <section className="mb-16">
         <h1 className="text-2xl font-semibold tracking-tight">hyunzsu</h1>
         <p className="mt-2 text-neutral-500">...</p>

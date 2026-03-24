@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllPosts, type Category } from "@/shared/lib/posts";
-import { PostListItem } from "@/shared/ui/post-list-item";
+import { getAllPosts, type Category, PostListItem } from "@/entities/post";
 
 export const metadata: Metadata = {
   title: "Posts",
@@ -28,7 +27,7 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
       : allPosts;
 
   return (
-    <div className="mx-auto max-w-[720px] px-6 py-16">
+    <div className="mx-auto max-w-content px-6 py-16">
       <h1 className="mb-8 text-2xl font-semibold tracking-tight">Posts</h1>
 
       <div className="mb-8 flex gap-2">

@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug, type Category } from "@/shared/lib/posts";
-import { extractToc } from "@/shared/lib/toc";
-import { GiscusComments } from "@/shared/ui/giscus-comments";
-import { MdxContent } from "@/shared/ui/mdx-content";
-import { TableOfContents } from "@/shared/ui/toc";
+import { getAllPosts, getPostBySlug, isCategoryValid } from "@/entities/post";
+import { formatDate } from "@/shared/lib";
+import { GiscusComments } from "@/features/comments";
+import { MdxContent } from "@/shared/ui";
+import { extractToc, TableOfContents } from "@/features/table-of-contents";
 
 interface PostPageProps {
   params: Promise<{ category: string; slug: string }>;
 }
-
-const VALID_CATEGORIES = ["dev", "life", "essay"];
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -24,7 +22,8 @@ export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
   const { category, slug } = await params;
-  const post = getPostBySlug(category as Category, slug);
+  if (!isCategoryValid(category)) return {};
+  const post = getPostBySlug(category, slug);
 
   if (!post) return {};
 
@@ -34,27 +33,18 @@ export async function generateMetadata({
   };
 }
 
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("ko-KR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default async function PostPage({ params }: PostPageProps) {
   const { category, slug } = await params;
 
-  if (!VALID_CATEGORIES.includes(category)) notFound();
+  if (!isCategoryValid(category)) notFound();
 
-  const post = getPostBySlug(category as Category, slug);
+  const post = getPostBySlug(category, slug);
   if (!post) notFound();
 
   const tocItems = extractToc(post.content);
 
   return (
-    <div className="mx-auto max-w-[720px] px-6 py-16 lg:max-w-[1080px]">
+    <div className="mx-auto max-w-content px-6 py-16 lg:max-w-content-wide">
       <div className="lg:grid lg:grid-cols-[1fr_200px] lg:gap-12">
         <article>
           <header className="mb-12">
