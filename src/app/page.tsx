@@ -7,8 +7,8 @@ export default function Home() {
   const posts = getAllPosts().slice(0, RECENT_POSTS_COUNT);
 
   return (
-    <div className="max-w-content mx-auto px-6 py-16">
-      <section className="mb-16">
+    <div className="max-w-content mx-auto px-4 py-8 sm:px-6 sm:py-16">
+      <section className="mb-8 sm:mb-16">
         <h1 className="text-2xl font-semibold tracking-tight">hyunzsu</h1>
         <p className="mt-2 text-neutral-500">
           프론트엔드 개발자. 좋은 코드와 좋은 경험에 관심이 많습니다.
