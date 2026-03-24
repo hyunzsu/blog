@@ -6,10 +6,15 @@
  * from shared/config). No imports from entities/ or features/.
  * Compile-time guarantee: this file must never import domain types.
  */
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/shared/config";
 
 export function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="border-b border-neutral-200">
       <nav className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
@@ -17,16 +22,22 @@ export function Header() {
           {siteConfig.name}
         </Link>
         <ul className="flex gap-6">
-          {siteConfig.nav.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          {siteConfig.nav.map((item) => {
+            const isActive = pathname.startsWith(item.href);
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-sm transition-colors hover:text-neutral-900 ${
+                    isActive ? "text-neutral-900 font-medium" : "text-neutral-600"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>
