@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     siteName: siteConfig.name,
   },
+  twitter: {
+    card: "summary_large_image",
+    creator: `@${siteConfig.author}`,
+  },
 };
 
 export default function RootLayout({
