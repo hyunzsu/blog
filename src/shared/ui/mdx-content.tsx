@@ -12,11 +12,13 @@ import rehypeShiki from "@shikijs/rehype";
 import rehypeSlug from "rehype-slug";
 import type { PluggableList } from "unified";
 import { shikiOptions } from "@/shared/config";
+import { Callout } from "./mdx-components";
 
-const rehypePlugins: PluggableList = [
-  rehypeSlug,
-  [rehypeShiki, shikiOptions],
-];
+const rehypePlugins: PluggableList = [rehypeSlug, [rehypeShiki, shikiOptions]];
+
+const components: MDXRemoteProps["components"] = {
+  Callout,
+};
 
 const options: MDXRemoteProps["options"] = {
   mdxOptions: {
@@ -27,7 +29,7 @@ const options: MDXRemoteProps["options"] = {
 export function MdxContent({ source }: { source: string }) {
   return (
     <div className="prose prose-neutral max-w-none">
-      <MDXRemote source={source} options={options} />
+      <MDXRemote source={source} options={options} components={components} />
     </div>
   );
 }
