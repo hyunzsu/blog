@@ -6,9 +6,9 @@ export function GiscusComments() {
   return (
     <Giscus
       repo="hyunzsu/blog"
-      repoId=""
+      repoId="R_kgDORuDBGg"
       category="General"
-      categoryId=""
+      categoryId="DIC_kwDORuDBGs4C5JJj"
       mapping="pathname"
       strict="0"
       reactionsEnabled="1"
