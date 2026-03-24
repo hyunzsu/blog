@@ -3,8 +3,7 @@
 import dynamic from "next/dynamic";
 
 const GiscusCommentsImpl = dynamic(
-  () =>
-    import("./giscus-comments-impl").then((mod) => mod.GiscusCommentsImpl),
+  () => import("./giscus-comments-impl").then((mod) => mod.GiscusCommentsImpl),
   { ssr: false },
 );
 

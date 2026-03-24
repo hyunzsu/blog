@@ -10,7 +10,10 @@ export default function AboutPage() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tight">About</h1>
       <div className="prose prose-neutral max-w-none">
         <p>안녕하세요, hyunzsu입니다.</p>
-        <p>프론트엔드 개발을 하고 있으며, 좋은 코드와 좋은 사용자 경험을 만드는 일에 관심이 많습니다.</p>
+        <p>
+          프론트엔드 개발을 하고 있으며, 좋은 코드와 좋은 사용자 경험을 만드는
+          일에 관심이 많습니다.
+        </p>
         <h2>이 블로그에서는</h2>
         <ul>
           <li>개발하면서 배운 것들을 기록합니다</li>

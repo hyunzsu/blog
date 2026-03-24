@@ -100,7 +100,9 @@ export default async function PostPage({ params }: PostPageProps) {
             {/* 모바일 TOC */}
             {tocItems.length > 0 && (
               <div className="mb-8 rounded-lg border border-neutral-200 p-4 lg:hidden">
-                <p className="mb-2 text-sm font-medium text-neutral-500">목차</p>
+                <p className="mb-2 text-sm font-medium text-neutral-500">
+                  목차
+                </p>
                 <TableOfContents items={tocItems} />
               </div>
             )}

@@ -30,7 +30,9 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={`text-sm transition-colors hover:text-neutral-900 ${
-                    isActive ? "text-neutral-900 font-medium" : "text-neutral-600"
+                    isActive
+                      ? "font-medium text-neutral-900"
+                      : "text-neutral-600"
                   }`}
                 >
                   {item.label}
