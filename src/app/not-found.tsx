@@ -10,12 +10,20 @@ export default function NotFound() {
       <p className="mt-3 text-neutral-500">
         요청하신 페이지가 존재하지 않거나 이동되었습니다.
       </p>
-      <Link
-        href="/"
-        className="mt-8 text-sm text-neutral-400 underline-offset-4 hover:text-neutral-600 hover:underline"
-      >
-        홈으로 돌아가기 →
-      </Link>
+      <div className="mt-8 flex gap-6">
+        <Link
+          href="/"
+          className="text-sm text-neutral-400 underline-offset-4 hover:text-neutral-600 hover:underline"
+        >
+          홈으로 돌아가기 →
+        </Link>
+        <Link
+          href="/posts"
+          className="text-sm text-neutral-400 underline-offset-4 hover:text-neutral-600 hover:underline"
+        >
+          포스트 목록 보기 →
+        </Link>
+      </div>
     </div>
   );
 }
