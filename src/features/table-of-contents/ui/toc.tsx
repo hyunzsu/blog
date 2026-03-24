@@ -9,7 +9,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   if (items.length === 0) return null;
 
   return (
-    <nav>
+    <nav aria-label="목차">
       <ul className="space-y-1 text-sm">
         {items.map((item) => (
           <li
@@ -18,7 +18,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
           >
             <a
               href={`#${item.id}`}
-              className={`block py-1 transition-colors ${
+              className={`block py-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 rounded-sm ${
                 activeId === item.id
                   ? "text-neutral-900"
                   : "text-neutral-400 hover:text-neutral-600"
